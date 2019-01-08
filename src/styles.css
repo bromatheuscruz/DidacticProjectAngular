@@ -1,1 +1,95 @@
-/* You can add global styles to this file, and also import other style files */
+/* i hate bootstrap /kappa/keppo/keppo/kappa/ */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    height: 100%;
+}
+
+.site-container {
+    display: grid;
+    grid-template-areas: 
+        'header'
+        'main'
+        'footer';
+}
+
+/* header component */
+.header {
+    grid-area: header;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    width: 100%;
+    background-color: #d7271a;
+    max-height: 100px;
+}
+
+.header img {
+    box-sizing: content-box;
+    border-radius: 22px;
+    width: 140;
+    height: 160px;
+    box-shadow: 5px 5px 5px 5px rgba(10, 10, 10, 0.15);
+    margin-top: 140px;
+    position: relative;
+}
+
+.header .btn {
+    box-sizing: content-box;
+    text-decoration: none;
+    color: #ffffff;
+    font-size: 20px;
+    font-family: sans-serif;
+}
+
+/* main component */
+.main {
+    grid-area: main;
+    display: flex;
+    background-image: url('../src/assets/imgs/hamburguer_shutterstock.jpg');
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-attachment: fixed;
+    color: #ffffff;
+    height: 600px;
+}
+
+.form-box {
+    background: rgba(0,0,0,0.71) none;
+}
+
+/* footer component */
+.footer {
+    grid-area: footer;
+    background-color: #333333;
+    min-height: 140px;
+}
+
+
+/* @media queries*/
+@media(min-width: 600px) {
+    .fa-bars {
+        display: none;
+    }
+
+}
+@media(max-width: 600px) {
+    .header .btn {
+        display: none;
+    }
+}
+
+/* icons */
+.fa-bars {
+    text-decoration: none;
+    background-color:rgba(0,0,0,0.71) none;;
+    color: #ffffff;
+    font-size: 30px;
+    margin-top: 35px;
+}
