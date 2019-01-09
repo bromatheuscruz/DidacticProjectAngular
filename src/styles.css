@@ -39,7 +39,7 @@ body {
     position: relative;
 }
 
-.header .btn {
+.header .nav-btn {
     box-sizing: content-box;
     text-decoration: none;
     color: #ffffff;
@@ -51,6 +51,7 @@ body {
 .main {
     grid-area: main;
     display: flex;
+    align-items: center;
     background-image: url('../src/assets/imgs/hamburguer_shutterstock.jpg');
     background-position: center;
     background-repeat: no-repeat;
@@ -60,8 +61,60 @@ body {
     height: 600px;
 }
 
+.wrap {
+    flex-wrap: wrap;
+}
+
 .form-box {
+    font-family: sans-serif;
     background: rgba(0,0,0,0.71) none;
+    border-radius: 5px;
+    height: 300px;
+    margin: 80px;
+    padding: 20px 40px; 
+    display: flex;
+    flex-direction: column;
+    align-items: left;
+}
+
+.form-box .h1 {
+    font-size: 26px;
+    line-height: 1.3;
+    font-weight: 100;
+    color:#ffffff;
+    margin: 5px;
+}
+
+.form-box .input {
+    margin-top: 10px;
+    border: #d7271a;
+    background-size: contain;
+    font-size: 24px;
+    width: 100%;
+    height: 40px;
+    border-radius: 8px;
+    background-color: #ffffff;
+    margin: 0;
+    outline: 0;
+    padding: 5px;
+}
+
+.form-box .btn {
+    width: 100%;
+    border-radius: 8px;
+    align-self: center;
+    margin: 10px 0px;
+}
+
+.form-box .h2 .link {
+    text-decoration: underline;
+    color: #ffffff;
+    outline: 0;
+}
+
+.info {
+    margin-top: 40px;
+    font-size: 12px;
 }
 
 /* footer component */
@@ -71,7 +124,6 @@ body {
     min-height: 140px;
 }
 
-
 /* @media queries*/
 @media(min-width: 600px) {
     .fa-bars {
@@ -80,9 +132,14 @@ body {
 
 }
 @media(max-width: 600px) {
-    .header .btn {
+    .header .nav-btn {
         display: none;
     }
+    
+    .form-box {
+        margin: 10%;
+    }
+
 }
 
 /* icons */
@@ -92,4 +149,70 @@ body {
     color: #ffffff;
     font-size: 30px;
     margin-top: 35px;
+}
+
+/* buttons*/
+.btn {
+    display: block;
+    height: 42px;
+    margin: 2px;
+    text-align: center;
+    text-decoration: none;
+    font-size: 18px;
+    background-color: #cccccc; 
+    color: white;
+    -webkit-transition-duration: 0.2s; 
+    transition-duration: 0.2s;
+    cursor: pointer;
+    outline: 0;
+    border: none;
+  }
+
+.btn-red {
+    background-color: #d7271a;
+}
+
+.btn-mustard {
+    background-color: #f3b600;
+}
+
+.btn-white {
+    background-color: #ffffff;
+}
+
+.btn-black {
+    background-color: #333333;
+}
+
+.btn-red-out {
+    background-color: #ffffff;
+    border: 2px #d7271a solid;
+    color: #d7271a;
+}
+    
+.btn-white-out {
+    background-color: #333333;
+    border: 2px #ffffff solid;
+    color: #ffffff;
+}
+    
+.btn-black-out {
+    background-color: #ffffff;
+    border: 2px #333333 solid;
+    color: #333333;
+}
+
+.btn-red-out:hover {
+    background-color: #d7271a;
+    color: #ffffff;
+}
+    
+.btn-black-out:hover {
+    background-color: #333333;
+    color: #ffffff;
+}
+    
+.btn-white-out:hover {
+    background-color: #ffffff;
+    color: #333333;
 }
