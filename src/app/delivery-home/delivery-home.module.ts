@@ -1,27 +1,28 @@
-import { BrowserModule } from '@angular/platform-browser';
+import { HttpClientModule } from '@angular/common/http';
+import { ZipCodeService } from './zip-code.service';
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
+import { FormsModule } from '@angular/forms'; 
+import { RouterModule } from '@angular/router';
 
-import { HeaderComponent } from './header/header.component';
-import { FooterComponent } from './footer/footer.component';
-import { MainDeliveryComponent } from './main-delivery/main-delivery.component';
-import { ZipcodeFormComponent } from './zipcode-form/zipcode-form.component';
+import { ZipCodeFormComponent } from './zip-code-form/zip-code-form.component';
+import { ConfirmAddressComponent } from './confirm-address/confirm-address.component';
+import { DeliveryHomeRoutingModule } from './delivery-home.routing';
 
 @NgModule({
   imports: [
     CommonModule,
-    BrowserModule
+    RouterModule,
+    FormsModule,
+    DeliveryHomeRoutingModule,
+    HttpClientModule
   ],
   declarations: [
-    HeaderComponent,
-    FooterComponent,
-    MainDeliveryComponent,
-    ZipcodeFormComponent
+    ZipCodeFormComponent,
+    ConfirmAddressComponent
   ],
-  exports: [
-    HeaderComponent,
-    FooterComponent,
-    MainDeliveryComponent
+  providers: [ 
+    ZipCodeService
   ]
 })
 export class DeliveryHomeModule { }

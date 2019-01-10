@@ -1,20 +1,20 @@
 import { async, ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { ZipcodeFormComponent } from './zipcode-form.component';
+import { ZipCodeFormComponent } from './zip-code-form.component';
 
-describe('ZipcodeFormComponent', () => {
-  let component: ZipcodeFormComponent;
-  let fixture: ComponentFixture<ZipcodeFormComponent>;
+describe('ZipCodeFormComponent', () => {
+  let component: ZipCodeFormComponent;
+  let fixture: ComponentFixture<ZipCodeFormComponent>;
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      declarations: [ ZipcodeFormComponent ]
+      declarations: [ ZipCodeFormComponent ]
     })
     .compileComponents();
   }));
 
   beforeEach(() => {
-    fixture = TestBed.createComponent(ZipcodeFormComponent);
+    fixture = TestBed.createComponent(ZipCodeFormComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
   });
