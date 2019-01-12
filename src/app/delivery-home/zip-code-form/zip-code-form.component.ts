@@ -1,8 +1,6 @@
+import { DeliveryHomeService } from './../delivery-home.service';
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
-
-import { Address } from '../../models/address.model';
-import { ZipCodeService } from '../zip-code.service';
 
 @Component({
   selector: 'app-zipcode-form',
@@ -10,15 +8,15 @@ import { ZipCodeService } from '../zip-code.service';
   styleUrls: ['./zip-code-form.component.css']
 })
 export class ZipCodeFormComponent implements OnInit {
-  constructor(private zipCodeService: ZipCodeService, private router: Router) { }
+  constructor(private deliveryHomeService: DeliveryHomeService, private router: Router) { }
 
   zipCode: string;
-  address: Address;
 
   getAddress(): any {
-    this.zipCodeService.getAddress(this.zipCode).subscribe(address => {
-      this.address = address;
-      this.router.navigate(['confirmaddress'])
+    this.deliveryHomeService.getAddress(this.zipCode).subscribe(address => {
+      DeliveryHomeService.address = address;
+      this.router.navigate(['confirmaddress']);
+
     }, err => {
       alert('Não conseguimos encontrar o endereço :(')
       console.error(err);

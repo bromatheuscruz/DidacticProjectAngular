@@ -121,6 +121,7 @@ body {
 
 .input:disabled {
     background: #cccccc52;
+    color: #000000;
 }
 
 .form-box .btn {

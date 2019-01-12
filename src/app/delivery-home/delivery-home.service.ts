@@ -1,17 +1,18 @@
-import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
+import { Address } from './../models/address.model';
+import { Injectable, EventEmitter } from '@angular/core';
 import { Observable } from 'rxjs';
-
-import { Address } from '../models/address.model';
 
 @Injectable({
   providedIn: 'root'
 })
-export class ZipCodeService {
-
-  constructor(private http: HttpClient) { }
-
+export class DeliveryHomeService {
+  
+  static address;
+  
   getAddress(zipCode): Observable<Address> {
     return this.http.get<Address>(`https://viacep.com.br/ws/${zipCode}/json/`);
   }
+
+  constructor(private http: HttpClient) { }
 }
