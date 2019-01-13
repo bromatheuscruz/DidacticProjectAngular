@@ -1,7 +1,7 @@
-import { Address } from './../../models/address.model';
 import { Component, OnInit } from '@angular/core';
 import { DeliveryHomeService } from '../delivery-home.service';
 import { Router } from '@angular/router';
+import { FormGroup, FormBuilder, Validators, FormControl } from '@angular/forms';
 
 @Component({
   selector: 'app-manual-address',
@@ -10,25 +10,31 @@ import { Router } from '@angular/router';
 })
 export class ManualAddressComponent implements OnInit {
 
-  constructor(private deliveryHomeService: DeliveryHomeService,
-    private router: Router) { }
+  constructor(
+    private deliveryHomeService: DeliveryHomeService,
+    private router: Router,
+    private formBuilder: FormBuilder
+  ) { }
 
-  address: any = {
-    localidade: 'Rio de Janeiro',
-    logradouro: '',
-    numero: '',
-    complemento: ''
-  };
   bairros: any[];
-
-  addManualAddress(): void {
-  }
+  form: FormGroup;
 
   ngOnInit() {
     this.bairros = this.deliveryHomeService.getDistrict();
+    this.form = this.formBuilder.group({
+      localidade: new FormControl({ value: 'Rio de Janeiro', disabled: true }),
+      logradouro: ['', Validators.required],
+      bairro: ['', Validators.required],
+      numero: ['', Validators.required],
+      complemento: ['', Validators.minLength(5)]
+    });
   }
 
-  back(): void {
-    this.router.navigate(['']);
+  addManualAddress(): void {
+    if (this.form.valid) {
+      console.log(this.form.value);
+    } else {
+      alert('Preencha todos os campos');
+    }
   }
 }

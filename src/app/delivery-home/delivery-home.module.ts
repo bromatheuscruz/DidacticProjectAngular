@@ -1,7 +1,7 @@
 import { HttpClientModule } from '@angular/common/http';
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import { FormsModule } from '@angular/forms'; 
+import { FormsModule, ReactiveFormsModule } from '@angular/forms'; 
 import { RouterModule } from '@angular/router';
 
 import { ZipCodeFormComponent } from './zip-code-form/zip-code-form.component';
@@ -16,7 +16,8 @@ import { ManualAddressComponent } from './manual-address/manual-address.componen
     RouterModule,
     FormsModule,
     DeliveryHomeRoutingModule,
-    HttpClientModule
+    HttpClientModule,
+    ReactiveFormsModule
   ],
   declarations: [
     ZipCodeFormComponent,

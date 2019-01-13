@@ -1,15 +1,15 @@
-<div class="form-box between">
+<form [formGroup]="form" class="form-box between">
   <span class="h1">Informe o endereço</span>
-  <input type="text" class="input" [value]="address.localidade" disabled>
-  <select id="localidade" aria-placeholder="Bairro" class="input">
-    <option value="" disabled selected>Selecione o bairro</option>
-    <option *ngFor="let bairro of bairros" [value]="bairro.value">{{bairro.name}}</option>
+  <input type="text" class="input" formControlName="localidade">
+  <select aria-placeholder="Bairro" formControlName="bairro" class="input">
+    <option value="" disabled>Selecione o bairro</option>
+    <option *ngFor="let bairro of bairros" [value]="bairro.name">{{bairro.name}}</option>
   </select>
-  <input type="text" class="input" [(ngModel)]="address.logradouro" placeholder="Logradouro">
-  <input type="text" placeholder="N°" [(ngModel)]="address.numero" class="input">
-  <input type="text" placeholder="Complemento" [(ngModel)]="address.complemento" class="input">
+  <input type="text" class="input" formControlName="logradouro" placeholder="Logradouro">
+  <input type="text" placeholder="N°" formControlName="numero" class="input">
+  <input type="text" placeholder="Complemento" formControlName="complemento" class="input">
   <div class="left">
     <button class="btn btn-mustard" (click)="back()">Voltar</button>
     <button class="btn btn-red" (click)="addManualAddress()">Confirmar</button>
   </div>
-</div>
+</form>
