@@ -37,4 +37,8 @@ export class ManualAddressComponent implements OnInit {
       alert('Preencha todos os campos');
     }
   }
+
+  back(): void {
+    this.router.navigate(['']);
+  }
 }
