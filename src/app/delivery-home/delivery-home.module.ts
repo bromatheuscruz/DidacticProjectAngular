@@ -8,6 +8,7 @@ import { ZipCodeFormComponent } from './zip-code-form/zip-code-form.component';
 import { ConfirmAddressComponent } from './confirm-address/confirm-address.component';
 import { DeliveryHomeRoutingModule } from './delivery-home.routing';
 import { DeliveryHomeService } from './delivery-home.service';
+import { ManualAddressComponent } from './manual-address/manual-address.component';
 
 @NgModule({
   imports: [
@@ -19,7 +20,8 @@ import { DeliveryHomeService } from './delivery-home.service';
   ],
   declarations: [
     ZipCodeFormComponent,
-    ConfirmAddressComponent
+    ConfirmAddressComponent,
+    ManualAddressComponent
   ],
   providers: [ 
     DeliveryHomeService

@@ -15,7 +15,7 @@ export class ZipCodeFormComponent implements OnInit {
   getAddress(): any {
     this.deliveryHomeService.getAddress(this.zipCode).subscribe(address => {
       DeliveryHomeService.address = address;
-      this.router.navigate(['confirmaddress']);
+      this.router.navigate(['confirm-address']);
 
     }, err => {
       alert('Não conseguimos encontrar o endereço :(')

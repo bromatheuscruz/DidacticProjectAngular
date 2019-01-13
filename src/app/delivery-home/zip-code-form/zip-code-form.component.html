@@ -2,7 +2,7 @@
   <span class="h1">Faça seu pedido</span>
   <input type="text"  class="input" [(ngModel)]="zipCode" name="zipCode" placeholder="Digite seu CEP">
   <button (click)="getAddress()" class="btn btn-red">Buscar</button>
-  <span class="h2">Não sabe seu <b>CEP</b>? <a class="link" href="#">Clique aqui</a></span>
+  <span class="h2">Não sabe seu <b>CEP</b>? <a class="link" [routerLink]="['/manual-address']" routerLinkActive="router-link-active" >Clique aqui</a></span>
   <span class="info">Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been
     the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley
     of type and scrambled it to make a type specimen book.</span>

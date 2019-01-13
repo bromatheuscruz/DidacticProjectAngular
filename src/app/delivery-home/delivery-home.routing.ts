@@ -1,3 +1,4 @@
+import { ManualAddressComponent } from './manual-address/manual-address.component';
 import { Routes, RouterModule } from "@angular/router";
 import { NgModule } from "@angular/core";
 
@@ -6,7 +7,8 @@ import { ConfirmAddressComponent } from './confirm-address/confirm-address.compo
 
 const deliveryRoutes: Routes = [
     { path: '', component: ZipCodeFormComponent },
-    { path: 'confirmaddress', component: ConfirmAddressComponent }
+    { path: 'confirm-address', component: ConfirmAddressComponent },
+    { path: 'manual-address', component: ManualAddressComponent }
 ]
 
 @NgModule({

@@ -117,10 +117,11 @@ body {
     background-color: #ffffff;
     outline: 0;
     padding: 5px;
+    color: #000000;
 }
 
 .input:disabled {
-    background: #cccccc52;
+    background: #cccccc6e;
     color: #000000;
 }
 

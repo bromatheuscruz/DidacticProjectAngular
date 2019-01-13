@@ -7,11 +7,15 @@ import { Observable } from 'rxjs';
   providedIn: 'root'
 })
 export class DeliveryHomeService {
-  
+
   static address;
-  
+
   getAddress(zipCode): Observable<Address> {
     return this.http.get<Address>(`https://viacep.com.br/ws/${zipCode}/json/`);
+  }
+
+  getDistrict(): any {
+    return [{ name: 'Penha' }, { name: 'Olaria' }, { name: 'Penha' }, { name: 'Bonsucesso' }];
   }
 
   constructor(private http: HttpClient) { }
