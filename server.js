@@ -9,3 +9,5 @@ app.get('*', (req, res) => {
 });
 
 app.listen(process.env.PORT || 8080);
+
+console.log(`App rodando em http://localhost:${process.env.PORT || 8080}`);
