@@ -1,0 +1,18 @@
+<div class="menu-item" >
+  <div class="category" (click)="showProducts()">
+    <h1>
+      {{ category.title | uppercase }}
+    </h1>
+    <span><i [ngClass]="{'fas': true, 'fa-chevron-right': !visibility, 'fa-chevron-down' : visibility}"></i></span>
+  </div>
+  <ul>
+    <li>
+      <div *ngFor="let product of category.products">
+        <div *ngIf="visibility">
+          <app-product [productName]="product.name" [description]="product.description" [oldPrice]="product.oldPrice"
+            [currentPrice]="product.currentPrice"></app-product>
+        </div>
+      </div>
+    </li>
+  </ul>
+</div>

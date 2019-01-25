@@ -1,0 +1,15 @@
+<div class="carte-header">
+  <div class="title">
+    Alves Burguer - Penha
+  </div>
+  <div class="extra-info">
+    <a href="#">Informações extras</a>
+  </div>
+</div>
+<div class="carte-items">
+  <ul *ngFor="let category of categories">
+    <app-category [category]="category"></app-category>
+  </ul>
+</div>
+<div class="shopping-cart">
+</div>

@@ -5,14 +5,24 @@
     padding: 0;
     box-sizing: border-box;
 }
-
 html {
     font-family: sans-serif;
 }
 
+body {
+    height: 100vh;
+    background-image: url('../src/assets/imgs/hamburguer_shutterstock.jpg');
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-attachment: fixed;
+}
+
+
 .site-container {
-    position: relative;
+    height: 100vh;
     display: grid;
+    grid-template-rows: 100px 1fr 150px;
     grid-template-areas: 
         'header'
         'main'
@@ -20,48 +30,64 @@ html {
 }
 
 /* header component */
-.header {
+app-header {
+    height: 100%;
+
     grid-area: header;
-    display: flex;
-    justify-content: space-around;
+    display: grid;
+    grid-template-columns: 20% 1fr 20%;
+    grid-template-rows: 1fr;
+    grid-template-areas: 
+    'header-left header-center header-right';
+    
     align-items: center;
-    width: 100%;
+
     background-color: #d7271a;
-    max-height: 100px;
 }
 
-.header img {
-    box-sizing: content-box;
-    border-radius: 22px;
-    width: 140;
-    height: 160px;
-    box-shadow: 5px 5px 5px 5px rgba(10, 10, 10, 0.15);
-    margin-top: 200px;
-    position: relative;
-    margin-bottom: 100px;
+app-header .header-right {
+    grid-area: header-right;
+    display: flex;
+    color: #ffffff;
+
 }
 
-.header .nav-btn {
-    box-sizing: content-box;
+app-header .header-center {
+    grid-area: header-center;
+    display: flex;
+}
+
+app-header .header-center > img {
+    border-radius: 5px;
+    width: 80px;
+    height: 80px;
+    box-shadow: 2px 2px 2px 2px rgba(5, 5, 5, 0.15);
+    cursor: pointer;
+}
+
+app-header .header-right a.nav-btn {
     text-decoration: none;
     color: #ffffff;
-    font-size: 20px;
+    font-size: 16px;
     font-family: sans-serif;
+    font-weight: 200;
+}
+
+app-header .header-left {
+    grid-area: header-left;
+    display: flex;
 }
 
 /* main component */
 .main {
     grid-area: main;
     display: flex;
-    align-items: center;
-    background-image: url('../src/assets/imgs/hamburguer_shutterstock.jpg');
-    background-position: center;
-    background-repeat: no-repeat;
-    background-size: cover;
-    background-attachment: fixed;
-    color: #ffffff;
-    height: 600px;
+    margin: 50px 0px;
+    justify-content: center;
+    
 }
+
+
 
 .form-box {
     position: absolute;
@@ -148,12 +174,55 @@ html {
 }
 
 /* footer component */
-.footer {
+app-footer {
     grid-area: footer;
     background-color: #333333;
-    min-height: 140px;
+    display: flex;
+    padding: 10px;
+    justify-content: center;
+    align-items: center;
 }
 
+app-footer .footer-social {
+    display: flex;
+    font-size: 40px;
+}
+
+app-footer .footer-social i {
+    margin: 0px 10px;
+    cursor: pointer;
+}
+
+#fb:hover {
+    color: #3b5998;
+    transition: 0.1s;
+}
+
+#whats:hover {
+    color: #25d366;
+    transition: 0.1s;
+}
+
+#insta:hover {
+    color: #ffffff;
+    transition: 0.1s;
+}
+
+app-footer .footer-info {
+    display: flex;
+    flex-direction: column;
+    font-size: 12px;
+    color: #f3b600;
+    margin-top: 20px;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+}
+
+app-footer .footer-info:hover {
+    color: #d7271a;
+    transition: 0.5s;
+}
 /* @media queries*/
 @media(min-width: 600px) {
     .fa-bars {
@@ -162,7 +231,7 @@ html {
 
 }
 @media(max-width: 600px) {
-    .header .nav-btn {
+    app-header .nav-btn {
         display: none;
     }
     
@@ -247,4 +316,151 @@ html {
 .btn-white-out:hover {
     background-color: #ffffff;
     color: #333333;
+}
+
+app-carte {
+    height: 100%;
+    display: grid;
+    background-color: #5a5a5ac2;
+    min-width: 1000px;
+    border-radius: 5px;
+    display: grid;
+    grid-template-rows: 100px 1fr;
+    grid-template-columns: 70% 30%;
+    grid-template-areas: 
+        'menu-header menu-header'
+        'menu-items shopping-cart';
+}
+
+.carte-header {
+    grid-area: menu-header;
+    background-color:rgba(10, 10, 10, 0)f;
+    padding: 8px;
+    
+}
+
+.carte-header .title {
+    font-family: sans-serif;
+    font-weight: 200;
+    font-size: 24px;
+    margin: 12px 0px;
+    color: #ffffff;
+}
+
+.carte-header .extra-info > a{
+    color: #ffffff;
+    padding: 8px 0px;
+}
+
+.carte-items {
+    grid-area: menu-items;
+    padding: 5px;
+
+}
+
+.shopping-cart {
+    grid-area: shopping-cart;
+    background-color: #333333;
+    border-radius: 5px;
+    max-height: 200px;
+    margin: 10px;
+}
+
+.menu-item {
+    display: flex;
+    flex-direction: column;
+    margin: 10px 0px;
+}
+
+li {
+    list-style-type: none;
+}
+
+.category {
+    display: flex;
+    align-items: center;
+
+    width: 100%;
+    height: 40px;
+    padding: 5px;
+    border-radius: 5px;
+
+    font-size: 10px;
+    font-weight: 100;
+    
+    background: #ffffff;
+    color: #000000;
+
+    justify-content: space-between;
+
+    cursor: pointer;
+}
+
+.category ul {
+    transition: 0.5s;
+}
+
+.category span {
+    margin-right: 10px;
+}
+
+.product {
+    display: grid;
+    grid-template-columns: 20% 60% 10% 10%;
+    grid-template-rows: 100px;
+    grid-template-areas: 
+        'img-product texts prices options';
+    padding: 5px;
+    margin: 5px 0px;    
+    background-color: #ffffff;
+    border-radius: 5px;
+
+    transition: 1s;
+}
+
+.product .img-product {
+    grid-area: img-product;
+    margin: 3px;
+    border-radius: 5px;
+    background-color: #000000;
+    width: 100%;
+    height: 100%;
+    border: 1px solid red;
+}
+
+.product .texts {
+    grid-area: texts;
+    margin: 0px 10px;
+    padding: 3px;
+    font-size: 14px;
+    color: #000000;
+}
+
+.product .prices {
+    grid-area: prices;
+    display: flex;
+    padding: 5px;
+    flex-direction: column;
+    justify-items: center;
+    align-items: center;
+}
+
+.product .options {
+    grid-area: options;
+    display: flex;
+    padding: 5px;
+    color: #ffffff;
+    justify-content: space-around ;
+    align-items: center;
+    font-size: 22px;
+}
+
+.product .options .fa-plus-circle {
+    color: rgb(24, 238, 24);
+    cursor: pointer;
+}
+
+.product .options .fa-comment {
+    color: #f3b600;
+    cursor: pointer;
 }
