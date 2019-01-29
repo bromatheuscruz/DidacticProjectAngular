@@ -11,6 +11,7 @@ export class ProductComponent implements OnInit {
   @Input() description: string;
   @Input() oldPrice: string;
   @Input() currentPrice: string;
+  @Input() img: string;
 
   constructor() { }
 
