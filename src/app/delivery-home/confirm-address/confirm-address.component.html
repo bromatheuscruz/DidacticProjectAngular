@@ -1,13 +1,13 @@
-<div class="form-box between">
+<form [formGroup]="confirmForm" (ngSubmit)="onSubmit()" class="form-box between">
     <span class="h1">Confirme o endereço</span>
-    <input type="text" class="input" [(ngModel)]="address.localidade" disabled>
-    <input type="text" class="input" [(ngModel)]="address.bairro" disabled>
-    <input type="text" class="input" [(ngModel)]="address.logradouro" disabled>
-    <input type="text" placeholder="N°" [(ngModel)]="address.numero" class="input">
-    <input type="text" placeholder="Complemento" [(ngModel)]="address.complemento" class="input">
+    <input type="text" class="input" formControlName="localidade" disabled>
+    <input type="text" class="input" formControlName="bairro" disabled>
+    <input type="text" class="input" formControlName="logradouro" disabled>
+    <input type="text" placeholder="N°" formControlName="numero" class="input">
+    <input type="text" placeholder="Complemento" formControlName="complemento" class="input">
     <div class="left">
         <button class="btn btn-mustard" (click)="back()">Voltar</button>
-        <button class="btn btn-red">Confirmar</button>
+        <button class="btn btn-red" (click)="carte()">Confirmar</button>
     </div>
     <span class="info"></span>
-</div>
+</form>

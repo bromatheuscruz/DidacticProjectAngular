@@ -1,6 +1,5 @@
 import { HttpClient } from '@angular/common/http';
-import { Address } from './../models/address.model';
-import { Injectable, EventEmitter } from '@angular/core';
+import { Injectable } from '@angular/core';
 import { Observable } from 'rxjs';
 
 @Injectable({
@@ -10,8 +9,8 @@ export class DeliveryHomeService {
 
   static address;
 
-  getAddress(zipCode): Observable<Address> {
-    return this.http.get<Address>(`https://viacep.com.br/ws/${zipCode}/json/`);
+  getAddress(zipCode): Observable<any> {
+    return this.http.get<any>(`https://viacep.com.br/ws/${zipCode}/json/`);
   }
 
   getDistrict(): any {
