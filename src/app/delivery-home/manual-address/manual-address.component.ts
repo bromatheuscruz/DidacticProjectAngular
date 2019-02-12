@@ -26,13 +26,13 @@ export class ManualAddressComponent implements OnInit {
       logradouro: ['', Validators.required],
       bairro: ['', Validators.required],
       numero: ['', Validators.required],
-      complemento: ['', Validators.minLength(5)]
+      complemento: ['', Validators.minLength(6)]
     });
   }
 
   addManualAddress(): void {
     if (this.form.valid) {
-      console.log(this.form.value);
+      this.router.navigate(['carte']);
     } else {
       alert('Preencha todos os campos');
     }
